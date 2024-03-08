@@ -1,5 +1,6 @@
-# touch
-name: trivy-config
+# Runs trivy in config mode only for IaC scanning
+# See https://aquasecurity.github.io/trivy/v0.22.0/getting-started/cli/config/
+name: trivy-config-scan
 on:
   push:
     branches:
@@ -18,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Trivy vulnerability scanner in IaC mode
-        uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
+        uses: aquasecurity/trivy-action@main
         with:
           scan-type: 'config'
           hide-progress: false
