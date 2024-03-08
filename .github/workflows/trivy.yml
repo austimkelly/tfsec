@@ -1,5 +1,5 @@
 # touch
-name: build
+name: trivy-config
 on:
   push:
     branches:
